@@ -216,49 +216,7 @@ document.addEventListener("DOMContentLoaded", function() {
         );
       });
 
-      // Animate speaker/organizer cards - reduced effect
-      const speakerCards = document.querySelectorAll('#SpeakerAndPanelist .flex.flex-col.items-center');
-      speakerCards.forEach((card, index) => {
-        Motion.scroll(
-          Motion.animate(card,
-            {
-              opacity: [1, 1],
-              transform: ['translateY(20px) scale(0.95)', 'translateY(0px) scale(1)']
-            },
-            {
-              duration: 0.4,
-              easing: 'ease-out',
-              delay: index * 0.05 // Reduced stagger
-            }
-          ),
-          {
-            target: card,
-            offset: ['start 0.9', 'start 0.5']
-          }
-        );
-      });
-
-      // Animate organizer cards - reduced effect
-      const organizerCards = document.querySelectorAll('#organization .flex.flex-col.items-center');
-      organizerCards.forEach((card, index) => {
-        Motion.scroll(
-          Motion.animate(card,
-            {
-              opacity: [1, 1],
-              transform: ['translateY(20px) scale(0.95)', 'translateY(0px) scale(1)']
-            },
-            {
-              duration: 0.4,
-              easing: 'ease-out',
-              delay: index * 0.04 // Reduced stagger
-            }
-          ),
-          {
-            target: card,
-            offset: ['start 0.9', 'start 0.5']
-          }
-        );
-      });
+      
 
       // Animate the schedule table - much more subtle
       const scheduleTable = document.querySelector('#program .bg-white\\/60');

@@ -117,6 +117,208 @@ document.addEventListener("DOMContentLoaded", function() {
         isOpen = false;
       }
     });
+
+    // NAVIGATION SCROLL HIGHLIGHTING
+    function updateActiveNavLink() {
+      const sections = document.querySelectorAll('section[id], header');
+      const navLinksDesktop = document.querySelectorAll('.nav-link[data-section]');
+      const navLinksMobile = document.querySelectorAll('.mobile-nav-link[data-section]');
+      
+      let currentSection = '';
+      const scrollPosition = window.scrollY + 100; // Offset for better detection
+
+      // Find which section is currently in view
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          currentSection = section.id;
+        }
+      });
+
+      // Update desktop navigation
+      navLinksDesktop.forEach(link => {
+        const section = link.getAttribute('data-section');
+        if (section === currentSection) {
+          link.classList.add('nav-link-active');
+        } else {
+          link.classList.remove('nav-link-active');
+        }
+      });
+
+      // Update mobile navigation
+      navLinksMobile.forEach(link => {
+        const section = link.getAttribute('data-section');
+        if (section === currentSection) {
+          link.classList.add('mobile-nav-link-active');
+        } else {
+          link.classList.remove('mobile-nav-link-active');
+        }
+      });
+    }
+
+    // Throttled scroll event for performance
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      scrollTimeout = setTimeout(updateActiveNavLink, 10);
+    });
+
+    // Initial call to set active state
+    updateActiveNavLink();
+
+    // SUBTLE SCROLL-BASED ANIMATIONS USING MOTION ONE
+    if (typeof Motion !== 'undefined') {
+      
+      // Animate section headings on scroll - more subtle
+      const headings = document.querySelectorAll('h2');
+      headings.forEach(heading => {
+        Motion.scroll(
+          Motion.animate(heading, 
+            { 
+              opacity: [0.7, 1],
+              transform: ['translateY(20px)', 'translateY(0px)']
+            },
+            { 
+              duration: 0.6,
+              easing: 'ease-out'
+            }
+          ),
+          {
+            target: heading,
+            offset: ['start 0.9', 'start 0.6']
+          }
+        );
+      });
+
+      // Animate paragraphs and content blocks - much more subtle
+      const contentBlocks = document.querySelectorAll('p, ul');
+      contentBlocks.forEach((block, index) => {
+        Motion.scroll(
+          Motion.animate(block,
+            {
+              opacity: [0.8, 1],
+              transform: ['translateY(15px)', 'translateY(0px)']
+            },
+            {
+              duration: 0.4,
+              easing: 'ease-out',
+              delay: Math.min(index * 0.05, 0.3) // Cap the delay
+            }
+          ),
+          {
+            target: block,
+            offset: ['start 0.95', 'start 0.7']
+          }
+        );
+      });
+
+      // Animate speaker/organizer cards - reduced effect
+      const speakerCards = document.querySelectorAll('#SpeakerAndPanelist .flex.flex-col.items-center');
+      speakerCards.forEach((card, index) => {
+        Motion.scroll(
+          Motion.animate(card,
+            {
+              opacity: [0.6, 1],
+              transform: ['translateY(20px) scale(0.95)', 'translateY(0px) scale(1)']
+            },
+            {
+              duration: 0.4,
+              easing: 'ease-out',
+              delay: index * 0.05 // Reduced stagger
+            }
+          ),
+          {
+            target: card,
+            offset: ['start 0.9', 'start 0.5']
+          }
+        );
+      });
+
+      // Animate organizer cards - reduced effect
+      const organizerCards = document.querySelectorAll('#organization .flex.flex-col.items-center');
+      organizerCards.forEach((card, index) => {
+        Motion.scroll(
+          Motion.animate(card,
+            {
+              opacity: [0.6, 1],
+              transform: ['translateY(20px) scale(0.95)', 'translateY(0px) scale(1)']
+            },
+            {
+              duration: 0.4,
+              easing: 'ease-out',
+              delay: index * 0.04 // Reduced stagger
+            }
+          ),
+          {
+            target: card,
+            offset: ['start 0.9', 'start 0.5']
+          }
+        );
+      });
+
+      // Animate the schedule table - much more subtle
+      const scheduleTable = document.querySelector('#program .bg-white\\/60');
+      if (scheduleTable) {
+        Motion.scroll(
+          Motion.animate(scheduleTable,
+            {
+              opacity: [0.8, 1],
+              transform: ['translateY(10px)', 'translateY(0px)']
+            },
+            {
+              duration: 0.5,
+              easing: 'ease-out'
+            }
+          ),
+          {
+            target: scheduleTable,
+            offset: ['start 0.95', 'start 0.7']
+          }
+        );
+      }
+
+      // Animate the Call for Papers section - very subtle
+      const callSection = document.querySelector('#call');
+      if (callSection) {
+        Motion.scroll(
+          Motion.animate(callSection,
+            {
+              opacity: [0.9, 1],
+              transform: ['scale(0.98)', 'scale(1)']
+            },
+            {
+              duration: 0.5,
+              easing: 'ease-out'
+            }
+          ),
+          {
+            target: callSection,
+            offset: ['start 0.95', 'start 0.7']
+          }
+        );
+      }
+
+      // Animate header content - immediate and subtle
+      const headerContent = document.querySelector('header .mx-auto');
+      if (headerContent) {
+        Motion.animate(headerContent,
+          {
+            opacity: [0.8, 1],
+            transform: ['translateY(15px)', 'translateY(0px)']
+          },
+          {
+            duration: 0.8,
+            easing: 'ease-out',
+            delay: 0.2
+          }
+        );
+      }
+
+    }
 });
 
 

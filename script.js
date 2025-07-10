@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function() {
         Motion.scroll(
           Motion.animate(card,
             {
-              opacity: [0.6, 1],
+              opacity: [1, 1],
               transform: ['translateY(20px) scale(0.95)', 'translateY(0px) scale(1)']
             },
             {
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function() {
         Motion.scroll(
           Motion.animate(card,
             {
-              opacity: [0.6, 1],
+              opacity: [1, 1],
               transform: ['translateY(20px) scale(0.95)', 'translateY(0px) scale(1)']
             },
             {

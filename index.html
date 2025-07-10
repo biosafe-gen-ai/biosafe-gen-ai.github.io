@@ -82,17 +82,15 @@
         <div class="mx-auto flex justify-between md:justify-evenly items-center px-4 py-3 h-16"
           style="backdrop-filter: blur(8px); background: rgba(255,255,255,0.35);">
           <!-- Brand -->
-          <a href="#" class="text-xl font-bold text-black hover:text-blue-700 drop-shadow-lg" style="font-family: 'Cormorant', serif;">
+          <a href="index.html" class="text-xl font-bold text-black hover:text-blue-700 drop-shadow-lg" style="font-family: 'Cormorant', serif;">
             Biosecurity Safeguards for Generative AI
           </a>
           <!-- Desktop Links -->
           <div class="hidden md:flex space-x-4 text-lg font-medium">
-            <a href="#introduction" class="nav-link hover:text-blue-700 transition" data-section="introduction">Motivation</a>
-            <a href="#Objective" class="nav-link hover:text-blue-700 transition" data-section="Objective">Objective</a>
-            <a href="#program" class="nav-link hover:text-blue-700 transition" data-section="program">Schedule</a>
-            <a href="#call" class="nav-link hover:text-blue-700 transition" data-section="call">Call for Papers</a>
-            <a href="#SpeakerAndPanelist" class="nav-link hover:text-blue-700 transition" data-section="SpeakerAndPanelist">Speakers</a>
-            <a href="#organization" class="nav-link hover:text-blue-700 transition" data-section="organization">Organizers</a>
+            <a href="index.html" class="nav-link hover:text-blue-700 transition nav-link-active">Home</a>
+            <a href="schedule.html" class="nav-link hover:text-blue-700 transition">Schedule</a>
+            <a href="call_for_papers.html" class="nav-link hover:text-blue-700 transition">Call for Papers</a>
+            <a href="#SpeakerAndPanelist" class="nav-link hover:text-blue-700 transition">Speakers</a>
           </div>
           <!-- Hamburger Menu (Mobile) -->
           <button id="nav-toggle" class="md:hidden focus:outline-none" aria-label="Toggle navigation">
@@ -107,28 +105,49 @@
         <div id="nav-menu"
              class="absolute top-full left-0 w-full md:hidden px-4 py-3 border-t border-white/30 shadow-lg hidden z-20"
              style="backdrop-filter: blur(8px); background: rgba(255,255,255,0.35);">
-                      <a href="#introduction" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="introduction">Motivation</a>
-            <a href="#Objective" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="Objective">Objective</a>
-            <a href="#program" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="program">Schedule</a>
-            <a href="#call" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="call">Call for Papers</a>
-            <a href="#SpeakerAndPanelist" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="SpeakerAndPanelist">Speakers</a>
-            <a href="#organization" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="organization">Organizers</a>
+            <a href="index.html" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link mobile-nav-link-active">Home</a>
+            <a href="schedule.html" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Schedule</a>
+            <a href="call_for_papers.html" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Call for Papers</a>
+            <a href="#SpeakerAndPanelist" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Speakers</a>
         </div>
       </nav>
 
     <!-- HEADER -->
-    <header class="bg-[url('img/bg.png')] bg-cover bg-center min-h-[340px] text-center text-white flex items-center">
-      <div class="mx-auto">
+    <header class="bg-[url('img/bg.png')] bg-cover bg-center min-h-[600px] text-center text-white flex items-center">
+      <div class="mx-auto max-w-5xl px-4 mt-24">
         <h2 class="text-2xl font-semibold tracking-wide" style="font-family: 'Cormorant', serif;">NeurIPS 2025 Workshop</h2>
-        <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-4" style="font-family: 'Cormorant', serif;">Biosecurity Safeguards for Generative AI</h1>
-        <div class="text-xl">San Diego, California, USA</div>
+        <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6" style="font-family: 'Cormorant', serif;">Biosecurity Safeguards for Generative AI</h1>
+        <div class="text-xl mb-8">San Diego, California, USA</div>
+        
+        <!-- Important Dates -->
+        <div class="bg-black/20 backdrop-blur-sm rounded-lg p-6 max-w-3xl mx-auto">
+          <h3 class="text-2xl font-bold mb-4" style="font-family: 'Cormorant', serif;">Important Dates</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm md:text-base">
+            <div>
+              <div class="font-semibold">Paper Submission Deadline (OpenReview):</div>
+              <div>August 22, 2025 AOE</div>
+            </div>
+            <div>
+              <div class="font-semibold">Acceptance Notification:</div>
+              <div>September 22, 2025</div>
+            </div>
+            <div>
+              <div class="font-semibold">Camera-Ready Deadline:</div>
+              <div>October 23, 2025</div>
+            </div>
+            <div>
+              <div class="font-semibold">Workshop:</div>
+              <div>December 2025, NeurIPS 2025</div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
-    <!-- MOTIVATION -->
-    <section id="introduction" class="max-w-3xl mx-auto mt-24 mb-12 px-4">
-      <h2 class="text-4xl font-bold mb-4 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Motivation</h2>
-      <div class="space-y-6 text-justify text-base leading-relaxed text-gray-700">
+    <!-- WORKSHOP OVERVIEW -->
+    <section id="overview" class="max-w-4xl mx-auto mt-24 mb-12 px-4">
+      <h2 class="text-5xl font-bold mb-8 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Workshop Overview</h2>
+      <div class="space-y-8 text-justify text-lg leading-relaxed text-gray-700">
         <p>
           Generative AI is revolutionizing biotechnology with immense potential in drug discovery,
           protein engineering, and synthetic biology, but this progress brings profound biosecurity
@@ -153,93 +172,21 @@
           embedded within GenAI systems for the life sciences were highlighted. This workshop is motivated by
           this critical call and the urgent need to address these burgeoning biosecurity challenges.
         </p>
+        <p class="text-xl font-semibold text-blue-900 pt-4">
+          By confronting the escalating dual-use risks and vulnerabilities of
+          GenAI in biotechnology, this workshop aims to catalyze a concerted global effort towards embedding
+          robust biosecurity safeguards directly within these powerful tools. Our primary objective is to unite
+          interdisciplinary experts, spanning AI/ML, synthetic biology, bioinformatics, biosecurity policy, and
+          ethics, to forge actionable pathways for the research, development, standardization, and deployment
+          of AI-native safety measures. These include establishing dynamic benchmarks for risk prediction,
+          fostering collaborative red-teaming to uncover vulnerabilities, and engineering built-in technical
+          guardrails encompassing model-level constraints and agent-level defenses. By advancing these
+          critical safeguards, the workshop seeks to ensure that the profound benefits of GenAI in the life
+          sciences are realized responsibly, thereby protecting global health and promoting secure innovation
+          for the benefit of all.
+        </p>
       </div>
     </section>
-
-    <!-- OBJECTIVE -->
-    <section id="Objective" class="max-w-3xl mx-auto mt-24 mb-12 px-4">
-      <h2 class="text-4xl font-bold mb-4 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Objective</h2>
-      <p class="text-base text-gray-700 leading-relaxed text-justify">
-        By confronting the escalating dual-use risks and vulnerabilities of
-        GenAI in biotechnology, this workshop aims to catalyze a concerted global effort towards embedding
-        robust biosecurity safeguards directly within these powerful tools. Our primary objective is to unite
-        interdisciplinary experts, spanning AI/ML, synthetic biology, bioinformatics, biosecurity policy, and
-        ethics, to forge actionable pathways for the research, development, standardization, and deployment
-        of AI-native safety measures. These include establishing dynamic benchmarks for risk prediction,
-        fostering collaborative red-teaming to uncover vulnerabilities, and engineering built-in technical
-        guardrails encompassing model-level constraints and agent-level defenses. By advancing these
-        critical safeguards, the workshop seeks to ensure that the profound benefits of GenAI in the life
-        sciences are realized responsibly, thereby protecting global health and promoting secure innovation
-        for the benefit of all.
-      </p>
-    </section>
-
-    <!-- PROGRAM SCHEDULE -->
-    <section id="program" class="max-w-5xl mx-auto mt-24 mb-16 px-4">
-      <h2 class="text-4xl font-bold mb-4 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Schedule (Tentative)</h2>
-      <div class="bg-white/60 border border-gray-200 shadow-sm rounded-xl overflow-x-auto">
-        <table class="min-w-full text-sm">
-          <thead>
-            <tr class="bg-gray-100">
-              <th class="px-4 py-2 font-semibold text-left" style="font-family: 'Cormorant', serif;">Time (PDT)</th>
-              <th class="px-4 py-2 font-semibold text-left" style="font-family: 'Cormorant', serif;">Session</th>
-              <th class="px-4 py-2 font-semibold text-left" style="font-family: 'Cormorant', serif;">Speaker(s)</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y">
-            <tr><td class="px-4 py-2">9:00 - 9:05</td><td class="px-4 py-2">Opening remarks</td><td class="px-4 py-2">Organizers</td></tr>
-            <tr><td class="px-4 py-2">9:05 - 9:40</td><td class="px-4 py-2">Invited talk 1</td><td class="px-4 py-2">Yoshua Bengio</td></tr>
-            <tr><td class="px-4 py-2">9:40 - 10:15</td><td class="px-4 py-2">Invited talk 2</td><td class="px-4 py-2">Peter Hendersen</td></tr>
-            <tr><td class="px-4 py-2">10:15 - 10:25</td><td class="px-4 py-2">Short break</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">10:25 - 10:45</td><td class="px-4 py-2">Contributed talk 1</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">10:45 - 11:05</td><td class="px-4 py-2">Contributed talk 2</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">11:05 - 11:55</td><td class="px-4 py-2">Poster session 1</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">11:55 - 12:55</td><td class="px-4 py-2">Lunch break</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">12:55 - 1:30</td><td class="px-4 py-2">Invited talk 3</td><td class="px-4 py-2">Jian Ma</td></tr>
-            <tr><td class="px-4 py-2">1:30 - 2:05</td><td class="px-4 py-2">Invited talk 4</td><td class="px-4 py-2">Russ Altman</td></tr>
-            <tr><td class="px-4 py-2">2:05 - 3:05</td><td class="px-4 py-2">Panel discussion</td><td class="px-4 py-2">Panelists</td></tr>
-            <tr><td class="px-4 py-2">3:05 - 3:15</td><td class="px-4 py-2">Short break</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">3:15 - 4:05</td><td class="px-4 py-2">Poster session 2</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">4:05 - 4:40</td><td class="px-4 py-2">Invited talk 5</td><td class="px-4 py-2">Eric Xing</td></tr>
-            <tr><td class="px-4 py-2">4:40 - 5:15</td><td class="px-4 py-2">Invited talk 6</td><td class="px-4 py-2">Theofanis Karaletsos</td></tr>
-            <tr><td class="px-4 py-2">5:15 - 5:35</td><td class="px-4 py-2">Contributed talk 3</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">5:35 - 5:55</td><td class="px-4 py-2">Contributed talk 4</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">5:55 - 6:00</td><td class="px-4 py-2">Closing remarks</td><td class="px-4 py-2">Organizers</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="mt-4 text-gray-600 text-sm">The workshop will be from 9 am to 6 pm PDT and will feature invited talks, contributed talks, a panel, and poster sessions.</p>
-    </section>
-
-    <!-- CALL FOR PAPERS -->
-
-    <div class="bg-[#DCC5B2] py-4">
-
-    
-    <section id="call" class="max-w-3xl mx-auto mt-24 mb-16 px-4 ">
-      <h2 class="text-4xl font-bold mb-4 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Call for Papers</h2>
-      <ul class="list-disc pl-6 space-y-2 text-gray-700 mb-4">
-        <li>Empirical studies of security and safety risks in GenAI systems used for protein design, genome editing, molecular synthesis, and other biotechnological applications.</li>
-        <li>Evaluation methods and benchmarks for stress-testing generative AI models in biological domains.</li>
-        <li>Theoretical foundations for identifying and mitigating risks associated with generative models in the life sciences.</li>
-        <li>Design and implementation of safety mechanisms and protective measures directly integrated into GenAI tools.</li>
-        <li>Analyses of current GenAI applications in biotech that expose safety gaps, with recommendations for improving resilience.</li>
-      </ul>
-      <p class="mb-2"><span class="font-semibold">Submission URL:</span>
-        <a class="text-blue-700 underline" href='https://openreview.net/group?id=NeurIPS.cc/2025/Workshop/'>OpenReview</a>
-      </p>
-      <p class="mb-2"><span class="font-semibold">Length and Formatting:</span> 4–9 pages PDF, <a class="text-blue-700 underline" href='https://neurips.cc/Conferences/2025/CallForPapers'>NeurIPS 2025 Style Files</a>. Unlimited supplementary material allowed. Double-blind review.</p>
-      <div class="mb-2"><span class="font-semibold">Important Dates:</span>
-        <ul class="list-disc pl-6 text-gray-700">
-          <li>Paper Submission Deadline: Aug 22 AOE, 2025</li>
-          <li>Author Notification: Sep 22, 2025</li>
-          <li>Camera-ready Deadline: Oct 23, 2025</li>
-        </ul>
-      </div>
-      <p class="mb-2">Questions? Email: <a class="text-blue-700 underline" href="mailto:xxx@gmail.com">xxx@gmail.com</a></p>
-    </section>
-
-</div>
 
     <!-- SPEAKER & PANELIST SECTION -->
     <section id="SpeakerAndPanelist" class="max-w-6xl mx-auto mt-24 mb-16 px-4">
@@ -347,6 +294,11 @@
           <img src="./photos/unknow.webp" class="rounded-full h-36 w-36 object-cover mb-2 border-4 border-white shadow" />
           <div class="font-semibold" style="font-family: 'Cormorant', serif;">Zhenghong Zhou</div>
           <span class="text-xs text-gray-500">Shanghai Jiao Tong University</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="./photos/avinash.jpeg" class="rounded-full h-36 w-36 object-cover mb-2 border-4 border-white shadow" />
+          <div class="font-semibold" style="font-family: 'Cormorant', serif;">Avinash Reddy</div>
+          <span class="text-xs text-gray-500">University of Central Florida</span>
         </div>
       </div>
     </section>

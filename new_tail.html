@@ -9,24 +9,90 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+    <style>
+      /* Active navigation link styles */
+      .nav-link-active {
+        position: relative;
+        color: #1d4ed8 !important; /* blue-700 */
+      }
+      
+      .nav-link-active::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+        border-radius: 1px;
+        animation: slideIn 0.3s ease-out;
+      }
+      
+      @keyframes slideIn {
+        from {
+          width: 0%;
+          opacity: 0;
+        }
+        to {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+      
+      /* Mobile nav link styles */
+      .mobile-nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-nav-link-active {
+        color: #1d4ed8 !important;
+        background: rgba(255, 255, 255, 0.3) !important;
+      }
+      
+      .mobile-nav-link-active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 70%;
+        background: linear-gradient(180deg, #1d4ed8, #3b82f6);
+        border-radius: 2px;
+        animation: slideInVertical 0.3s ease-out;
+      }
+      
+      @keyframes slideInVertical {
+        from {
+          height: 0%;
+          opacity: 0;
+        }
+        to {
+          height: 70%;
+          opacity: 1;
+        }
+      }
+    </style>
 </head>
   <body class="bg-[#F0E4D3] text-gray-800" style="font-family: 'Roboto', sans-serif;">
 
-    <nav class="w-full border-b border-white/30 shadow-lg">
-        <div class="mx-auto flex justify-between items-center px-4 py-3 h-16"
+    <nav class="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/30 shadow-lg">
+        <div class="mx-auto flex justify-between md:justify-evenly items-center px-4 py-3 h-16"
           style="backdrop-filter: blur(8px); background: rgba(255,255,255,0.35);">
           <!-- Brand -->
           <a href="#" class="text-xl font-bold text-black hover:text-blue-700 drop-shadow-lg" style="font-family: 'Cormorant', serif;">
             Biosecurity Safeguards for Generative AI
           </a>
           <!-- Desktop Links -->
-          <div class="hidden md:flex space-x-4 text-sm font-medium">
-            <a href="#introduction" class="hover:text-blue-700 transition">Motivation</a>
-            <a href="#Objective" class="hover:text-blue-700 transition">Objective</a>
-            <a href="#program" class="hover:text-blue-700 transition">Schedule</a>
-            <a href="#call" class="hover:text-blue-700 transition">Call for Papers</a>
-            <a href="#SpeakerAndPanelist" class="hover:text-blue-700 transition">Speakers</a>
-            <a href="#organization" class="hover:text-blue-700 transition">Organizers</a>
+          <div class="hidden md:flex space-x-4 text-lg font-medium">
+            <a href="#introduction" class="nav-link hover:text-blue-700 transition" data-section="introduction">Motivation</a>
+            <a href="#Objective" class="nav-link hover:text-blue-700 transition" data-section="Objective">Objective</a>
+            <a href="#program" class="nav-link hover:text-blue-700 transition" data-section="program">Schedule</a>
+            <a href="#call" class="nav-link hover:text-blue-700 transition" data-section="call">Call for Papers</a>
+            <a href="#SpeakerAndPanelist" class="nav-link hover:text-blue-700 transition" data-section="SpeakerAndPanelist">Speakers</a>
+            <a href="#organization" class="nav-link hover:text-blue-700 transition" data-section="organization">Organizers</a>
           </div>
           <!-- Hamburger Menu (Mobile) -->
           <button id="nav-toggle" class="md:hidden focus:outline-none" aria-label="Toggle navigation">
@@ -39,14 +105,14 @@
       
         <!-- Mobile Links Dropdown -->
         <div id="nav-menu"
-             class="md:hidden px-4 py-3 border-t border-white/30 shadow-lg hidden"
+             class="absolute top-full left-0 w-full md:hidden px-4 py-3 border-t border-white/30 shadow-lg hidden z-20"
              style="backdrop-filter: blur(8px); background: rgba(255,255,255,0.35);">
-          <a href="#introduction" class="block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Motivation</a>
-          <a href="#Objective" class="block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Objective</a>
-          <a href="#program" class="block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Schedule</a>
-          <a href="#call" class="block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Call for Papers</a>
-          <a href="#SpeakerAndPanelist" class="block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Speakers</a>
-          <a href="#organization" class="block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Organizers</a>
+                      <a href="#introduction" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="introduction">Motivation</a>
+            <a href="#Objective" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="Objective">Objective</a>
+            <a href="#program" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="program">Schedule</a>
+            <a href="#call" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="call">Call for Papers</a>
+            <a href="#SpeakerAndPanelist" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="SpeakerAndPanelist">Speakers</a>
+            <a href="#organization" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link" data-section="organization">Organizers</a>
         </div>
       </nav>
 
@@ -60,7 +126,7 @@
     </header>
 
     <!-- MOTIVATION -->
-    <section id="introduction" class="max-w-3xl mx-auto mt-16 mb-12 px-4">
+    <section id="introduction" class="max-w-3xl mx-auto mt-24 mb-12 px-4">
       <h2 class="text-4xl font-bold mb-4 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Motivation</h2>
       <div class="space-y-6 text-justify text-base leading-relaxed text-gray-700">
         <p>
@@ -91,7 +157,7 @@
     </section>
 
     <!-- OBJECTIVE -->
-    <section id="Objective" class="max-w-3xl mx-auto mb-12 px-4">
+    <section id="Objective" class="max-w-3xl mx-auto mt-24 mb-12 px-4">
       <h2 class="text-4xl font-bold mb-4 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Objective</h2>
       <p class="text-base text-gray-700 leading-relaxed text-justify">
         By confronting the escalating dual-use risks and vulnerabilities of
@@ -109,7 +175,7 @@
     </section>
 
     <!-- PROGRAM SCHEDULE -->
-    <section id="program" class="max-w-5xl mx-auto mb-16 px-4">
+    <section id="program" class="max-w-5xl mx-auto mt-24 mb-16 px-4">
       <h2 class="text-4xl font-bold mb-4 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Schedule (Tentative)</h2>
       <div class="bg-white/60 border border-gray-200 shadow-sm rounded-xl overflow-x-auto">
         <table class="min-w-full text-sm">
@@ -150,7 +216,7 @@
     <div class="bg-[#DCC5B2] py-4">
 
     
-    <section id="call" class="max-w-3xl mx-auto m-4 px-4 ">
+    <section id="call" class="max-w-3xl mx-auto mt-24 mb-16 px-4 ">
       <h2 class="text-4xl font-bold mb-4 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Call for Papers</h2>
       <ul class="list-disc pl-6 space-y-2 text-gray-700 mb-4">
         <li>Empirical studies of security and safety risks in GenAI systems used for protein design, genome editing, molecular synthesis, and other biotechnological applications.</li>
@@ -176,7 +242,7 @@
 </div>
 
     <!-- SPEAKER & PANELIST SECTION -->
-    <section id="SpeakerAndPanelist" class="max-w-6xl mx-auto my-8 px-4">
+    <section id="SpeakerAndPanelist" class="max-w-6xl mx-auto mt-24 mb-16 px-4">
       <h2 class="text-4xl font-bold mb-6 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Speaker & Panelist</h2>
       <div class="grid grid-cols-2 md:grid-cols-4  gap-4 justify-items-center">
         <!-- Speaker Card -->
@@ -234,7 +300,7 @@
     </section>
 
     <!-- ORGANIZER SECTION -->
-    <section id="organization" class="max-w-6xl mx-auto mb-16 px-4">
+    <section id="organization" class="max-w-6xl mx-auto mt-24 mb-16 px-4">
       <h2 class="text-4xl font-bold mb-6 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Workshop Organizers</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 justify-items-center">
         <div class="flex flex-col items-center">

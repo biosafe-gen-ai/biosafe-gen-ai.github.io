@@ -216,7 +216,71 @@ document.addEventListener("DOMContentLoaded", function() {
         );
       });
 
+      // Staggered animation for Promise, Peril, Gap cards
+      const promisePerilGapCards = document.querySelectorAll('#overview .grid .bg-green-50, #overview .grid .bg-red-50, #overview .grid .bg-amber-50');
       
+      promisePerilGapCards.forEach((card, index) => {
+        Motion.scroll(
+          Motion.animate(card,
+            {
+              opacity: [0, 1],
+              transform: ['translateY(0px)', 'translateY(0px)']
+            },
+            {
+              duration: 0.8,
+              easing: 'ease-out',
+              delay: index * 0.2 // 200ms stagger between cards
+            }
+          ),
+          {
+            target: card,
+            offset: ['start 0.9', 'start 0.5']
+          }
+        );
+      });
+      
+      // Mission section moveY animation
+      const missionSection = document.querySelector('[data-animate="mission"]');
+      if (missionSection) {
+        Motion.scroll(
+          Motion.animate(missionSection,
+            {
+              opacity: [0, 1],
+              transform: ['translateY(60px)', 'translateY(0px)']
+            },
+            {
+              duration: 1.0,
+              easing: 'ease-out'
+            }
+          ),
+          {
+            target: missionSection,
+            offset: ['start 0.9', 'start 0.6']
+          }
+        );
+      }
+
+      // Join Us section moveY animation
+      const joinUsSection = document.querySelector('[data-animate="join-us"]');
+      if (joinUsSection) {
+        Motion.scroll(
+          Motion.animate(joinUsSection,
+            {
+              opacity: [0, 1],
+              transform: ['translateY(60px)', 'translateY(0px)']
+            },
+            {
+              duration: 1.0,
+              easing: 'ease-out',
+              delay: 0.3 // Slight delay after mission section
+            }
+          ),
+          {
+            target: joinUsSection,
+            offset: ['start 0.9', 'start 0.6']
+          }
+        );
+      }
 
       // Animate the schedule table - much more subtle
       const scheduleTable = document.querySelector('#program .bg-white\\/60');

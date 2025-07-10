@@ -74,6 +74,21 @@
           opacity: 1;
         }
       }
+
+      /* Initial states for animated elements */
+      #overview .bg-green-50,
+      #overview .bg-red-50,
+      #overview .bg-amber-50 {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      /* Mission and Join Us sections */
+      [data-animate="mission"],
+      [data-animate="join-us"] {
+        opacity: 0;
+        transform: translateY(60px);
+      }
     </style>
 </head>
   <body class="bg-[#F0E4D3] text-gray-800" style="font-family: 'Roboto', sans-serif;">
@@ -147,44 +162,72 @@
     <!-- WORKSHOP OVERVIEW -->
     <section id="overview" class="max-w-4xl mx-auto mt-24 mb-12 px-4">
       <h2 class="text-5xl font-bold mb-8 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Workshop Overview</h2>
-      <div class="space-y-8 text-justify text-lg leading-relaxed text-gray-700">
-        <p>
-          Generative AI is revolutionizing biotechnology with immense potential in drug discovery,
-          protein engineering, and synthetic biology, but this progress brings profound biosecurity
-          concerns. GenAI's capacity to design novel biomolecules that could bypass existing safety screens,
-          or be misused to engineer pathogens and toxins, presents credible dual-use threats, further amplified
-          by AI-driven automation and the potential for AI science agents to accelerate experimental designs.
-        </p>
-        <p>
-          While biosecurity dangers in biotechnology have been recognized for over two decades, AI significantly
-          accelerates and amplifies these risks, a concern echoed by leading scientists and even
-          developers of powerful genome and protein foundation models. Despite growing attention to general AI safety,
-          the distinct and critical field of AI biosecurity remains dangerously underexplored. This gap is particularly alarming
-          given the inherent dual-use nature of biotechnology, the high stakes of biological manipulation,
-          the complex domain-specific knowledge required, and a pervasive shortage of cross-disciplinary
-          expertise bridging AI safety and the biosciences.
-        </p>
-        <p>
-          Currently, many AI advancements in biotechnology are deployed without robust, built-in protections,
-          exposing significant vulnerabilities and creating an urgent imperative for action.
-          In a recent Nature Biotechnology article, <i>"A call for built-in biosecurity safeguards for generative AI tools"</i>,
-          these escalating risks and the need for proactive development and integration of AI-native safeguards
-          embedded within GenAI systems for the life sciences were highlighted. This workshop is motivated by
-          this critical call and the urgent need to address these burgeoning biosecurity challenges.
-        </p>
-        <p class="text-xl font-semibold text-blue-900 pt-4">
-          By confronting the escalating dual-use risks and vulnerabilities of
-          GenAI in biotechnology, this workshop aims to catalyze a concerted global effort towards embedding
-          robust biosecurity safeguards directly within these powerful tools. Our primary objective is to unite
-          interdisciplinary experts, spanning AI/ML, synthetic biology, bioinformatics, biosecurity policy, and
-          ethics, to forge actionable pathways for the research, development, standardization, and deployment
-          of AI-native safety measures. These include establishing dynamic benchmarks for risk prediction,
-          fostering collaborative red-teaming to uncover vulnerabilities, and engineering built-in technical
-          guardrails encompassing model-level constraints and agent-level defenses. By advancing these
-          critical safeguards, the workshop seeks to ensure that the profound benefits of GenAI in the life
-          sciences are realized responsibly, thereby protecting global health and promoting secure innovation
-          for the benefit of all.
-        </p>
+      <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+        
+        <!-- Main Headline -->
+        <div class="text-center mb-10">
+          <h3 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4" style="font-family: 'Cormorant', serif;">
+            AI & the Bio-Revolution: Innovating Responsibly, Securing Our Future
+          </h3>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Generative AI is driving a revolution in biotechnology, but with immense potential comes critical biosecurity challenges.
+          </p>
+        </div>
+
+        <!-- Promise, Peril, Gap Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 items-stretch">
+          <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg shadow-sm flex flex-col h-full">
+            <h4 class="text-xl font-bold text-green-700 mb-3" style="font-family: 'Cormorant', serif;">
+              🚀 The Promise
+            </h4>
+            <p class="text-gray-700 flex-grow">
+              GenAI offers unprecedented speed in drug discovery, protein engineering, and synthetic biology.
+            </p>
+          </div>
+          
+          <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg shadow-sm flex flex-col h-full">
+            <h4 class="text-xl font-bold text-red-700 mb-3" style="font-family: 'Cormorant', serif;">
+              ⚠️ The Peril
+            </h4>
+            <p class="text-gray-700 flex-grow">
+              These same tools could be misused to design novel pathogens and toxins, amplifying dual-use risks at an alarming pace.
+            </p>
+          </div>
+          
+          <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg shadow-sm flex flex-col h-full">
+            <h4 class="text-xl font-bold text-amber-700 mb-3" style="font-family: 'Cormorant', serif;">
+              🔍 The Gap
+            </h4>
+            <p class="text-gray-700 flex-grow">
+              AI biosecurity is dangerously underexplored, and most generative tools lack built-in safeguards.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="bg-[#FFEAD8] rounded-xl p-8 mb-8" data-animate="mission">
+          <h3 class="text-2xl md:text-3xl font-bold text-blue-900 mb-4 text-center" style="font-family: 'Cormorant', serif;">
+            🎯 Our Mission
+          </h3>
+          <p class="text-lg text-gray-700 text-center leading-relaxed">
+            This workshop will unite experts in AI, synthetic biology, biosecurity policy, and ethics to forge actionable solutions. 
+            We will move to embed robust, AI-native safeguards directly within the core of these powerful tools.
+          </p>
+        </div>
+
+        <!-- Join Us Section -->
+        <div class="bg-[#FFEAD8] rounded-xl p-8" data-animate="join-us">
+          <h3 class="text-2xl md:text-3xl font-bold text-indigo-900 mb-6 text-center" style="font-family: 'Cormorant', serif;">
+            🤝 Join us to:
+          </h3>
+          <ul class="list-disc list-inside text-gray-700">
+            <li>Engineer next-generation technical guardrails and defenses.</li>
+            <li>Establish benchmarks for risk prediction and red-teaming.</li>
+            <li>Build a global coalition for secure and responsible AI innovation in the life sciences.</li>
+          </ul>
+          </div>
+        </div>
+        
       </div>
     </section>
 

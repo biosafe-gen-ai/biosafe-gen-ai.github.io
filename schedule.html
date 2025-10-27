@@ -16,7 +16,6 @@
         position: relative;
         color: #1d4ed8 !important; /* blue-700 */
       }
-      
       .nav-link-active::after {
         content: '';
         position: absolute;
@@ -28,51 +27,28 @@
         border-radius: 1px;
         animation: slideIn 0.3s ease-out;
       }
-      
       @keyframes slideIn {
-        from {
-          width: 0%;
-          opacity: 0;
-        }
-        to {
-          width: 100%;
-          opacity: 1;
-        }
+        from { width: 0%; opacity: 0; }
+        to { width: 100%; opacity: 1; }
       }
-      
       /* Mobile nav link styles */
-      .mobile-nav-link {
-        position: relative;
-        transition: all 0.3s ease;
-      }
-      
+      .mobile-nav-link { position: relative; transition: all 0.3s ease; }
       .mobile-nav-link-active {
         color: #1d4ed8 !important;
         background: rgba(255, 255, 255, 0.3) !important;
       }
-      
       .mobile-nav-link-active::before {
         content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
+        position: absolute; left: 0; top: 50%;
         transform: translateY(-50%);
-        width: 3px;
-        height: 70%;
+        width: 3px; height: 70%;
         background: linear-gradient(180deg, #1d4ed8, #3b82f6);
         border-radius: 2px;
         animation: slideInVertical 0.3s ease-out;
       }
-      
       @keyframes slideInVertical {
-        from {
-          height: 0%;
-          opacity: 0;
-        }
-        to {
-          height: 70%;
-          opacity: 1;
-        }
+        from { height: 0%; opacity: 0; }
+        to { height: 70%; opacity: 1; }
       }
     </style>
 </head>
@@ -135,27 +111,45 @@
           </thead>
           <tbody class="divide-y">
             <tr><td class="px-4 py-2">9:00 - 9:05</td><td class="px-4 py-2">Opening remarks</td><td class="px-4 py-2">Organizers</td></tr>
-            <tr><td class="px-4 py-2">9:05 - 9:40</td><td class="px-4 py-2">Invited talk 1</td><td class="px-4 py-2">Yoshua Bengio</td></tr>
-            <tr><td class="px-4 py-2">9:40 - 10:15</td><td class="px-4 py-2">Invited talk 2</td><td class="px-4 py-2">Peter Hendersen</td></tr>
-            <tr><td class="px-4 py-2">10:15 - 10:25</td><td class="px-4 py-2">Short break</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">10:25 - 10:45</td><td class="px-4 py-2">Contributed talk 1</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">10:45 - 11:05</td><td class="px-4 py-2">Contributed talk 2</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">11:05 - 11:55</td><td class="px-4 py-2">Poster session 1</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">11:55 - 12:55</td><td class="px-4 py-2">Lunch break</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">12:55 - 1:30</td><td class="px-4 py-2">Invited talk 3</td><td class="px-4 py-2">Jian Ma</td></tr>
-            <tr><td class="px-4 py-2">1:30 - 2:05</td><td class="px-4 py-2">Invited talk 4</td><td class="px-4 py-2">Russ Altman</td></tr>
-            <tr><td class="px-4 py-2">2:05 - 3:05</td><td class="px-4 py-2">Panel discussion</td><td class="px-4 py-2">Panelists</td></tr>
-            <tr><td class="px-4 py-2">3:05 - 3:15</td><td class="px-4 py-2">Short break</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">3:15 - 4:05</td><td class="px-4 py-2">Poster session 2</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">4:05 - 4:40</td><td class="px-4 py-2">Invited talk 5</td><td class="px-4 py-2">Eric Xing</td></tr>
-            <tr><td class="px-4 py-2">4:40 - 5:15</td><td class="px-4 py-2">Invited talk 6</td><td class="px-4 py-2">Theofanis Karaletsos</td></tr>
-            <tr><td class="px-4 py-2">5:15 - 5:35</td><td class="px-4 py-2">Contributed talk 3</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">5:35 - 5:55</td><td class="px-4 py-2">Contributed talk 4</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">5:55 - 6:00</td><td class="px-4 py-2">Closing remarks</td><td class="px-4 py-2">Organizers</td></tr>
+
+            <tr><td class="px-4 py-2">9:05 - 9:35</td><td class="px-4 py-2">Invited talk 1</td><td class="px-4 py-2">Yoshua Bengio (Mila, Université de Montréal)</td></tr>
+            <tr><td class="px-4 py-2">9:35 - 10:05</td><td class="px-4 py-2">Invited talk 2</td><td class="px-4 py-2">Peter Henderson (Princeton University)</td></tr>
+            <tr><td class="px-4 py-2">10:05 - 10:35</td><td class="px-4 py-2">Invited talk 3</td><td class="px-4 py-2">Sheng Lin-Gibson (NIST)</td></tr>
+
+            <tr><td class="px-4 py-2">10:35 - 10:45</td><td class="px-4 py-2">Short break</td><td class="px-4 py-2"></td></tr>
+
+            <tr><td class="px-4 py-2">10:45 - 11:15</td><td class="px-4 py-2">Invited talk 4</td><td class="px-4 py-2">Megan Blewett (Iris Medicine; Kelonia Therapeutics)</td></tr>
+            <tr><td class="px-4 py-2">11:15 - 11:45</td><td class="px-4 py-2">Invited talk 5</td><td class="px-4 py-2">George Church</td></tr>
+
+            <!-- Contributed Spotlights A (3 × 5 min) -->
+            <tr class="bg-gray-50"><td class="px-4 py-2 font-medium">11:45 - 11:50</td><td class="px-4 py-2">Contributed Spotlight A: ABC-Bench — An Agentic Bio-Capabilities Benchmark for Biosecurity</td><td class="px-4 py-2">Spotlight</td></tr>
+            <tr class="bg-gray-50"><td class="px-4 py-2 font-medium">11:50 - 11:55</td><td class="px-4 py-2">Contributed Spotlight A: Without Safeguards, AI-Biology Integration Risks Accelerating Future Pandemics</td><td class="px-4 py-2">Spotlight</td></tr>
+            <tr class="bg-gray-50"><td class="px-4 py-2 font-medium">11:55 - 12:00</td><td class="px-4 py-2">Contributed Spotlight A: Deep Ignorance — Filtering Pretraining Data Builds Tamper-Resistant Safeguards into Open-Weight LLMs</td><td class="px-4 py-2">Spotlight</td></tr>
+
+            <tr><td class="px-4 py-2">12:00 - 1:00</td><td class="px-4 py-2">Lunch break</td><td class="px-4 py-2"></td></tr>
+
+            <tr><td class="px-4 py-2">1:00 - 1:40</td><td class="px-4 py-2">Poster session 1</td><td class="px-4 py-2"></td></tr>
+
+            <tr><td class="px-4 py-2">1:40 - 2:10</td><td class="px-4 py-2">Invited talk 6</td><td class="px-4 py-2">Jian Ma (Carnegie Mellon University)</td></tr>
+            <tr><td class="px-4 py-2">2:10 - 2:40</td><td class="px-4 py-2">Invited talk 7</td><td class="px-4 py-2">Russ Altman (Stanford University)</td></tr>
+            <tr><td class="px-4 py-2">2:40 - 3:25</td><td class="px-4 py-2">Panel discussion</td><td class="px-4 py-2">Panelists</td></tr>
+
+            <tr><td class="px-4 py-2">3:25 - 3:35</td><td class="px-4 py-2">Short break</td><td class="px-4 py-2"></td></tr>
+
+            <tr><td class="px-4 py-2">3:35 - 4:05</td><td class="px-4 py-2">Invited talk 8</td><td class="px-4 py-2">Eric Xing (Carnegie Mellon University; MBZUAI; Petuum Inc.)</td></tr>
+            <tr><td class="px-4 py-2">4:05 - 4:35</td><td class="px-4 py-2">Invited talk 9</td><td class="px-4 py-2">Theofanis Karaletsos (Chan Zuckerberg Initiative)</td></tr>
+
+            <!-- Contributed Spotlights B (3 × 5 min) -->
+            <tr class="bg-gray-50"><td class="px-4 py-2 font-medium">4:35 - 4:40</td><td class="px-4 py-2">Contributed Spotlight B: GeneBreaker — Jailbreak Attacks against DNA Language Models with Pathogenicity Guidance</td><td class="px-4 py-2">Spotlight</td></tr>
+            <tr class="bg-gray-50"><td class="px-4 py-2 font-medium">4:40 - 4:45</td><td class="px-4 py-2">Contributed Spotlight B: Resisting RL Elicitation of Biosecurity Capabilities — Reasoning Models Exploration Hacking on WMDP</td><td class="px-4 py-2">Spotlight</td></tr>
+            <tr class="bg-gray-50"><td class="px-4 py-2 font-medium">4:45 - 4:50</td><td class="px-4 py-2">Contributed Spotlight B: SafeGenie — Erasing Dangerous Concepts from Biological Diffusion Models</td><td class="px-4 py-2">Spotlight</td></tr>
+
+            <tr><td class="px-4 py-2">4:50 - 5:30</td><td class="px-4 py-2">Poster session 2</td><td class="px-4 py-2"></td></tr>
+            <tr><td class="px-4 py-2">5:30 - 5:35</td><td class="px-4 py-2">Closing remarks</td><td class="px-4 py-2">Organizers</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="mt-4 text-gray-600 text-sm">The workshop will be from 9 am to 6 pm PDT and will feature invited talks, contributed talks, a panel, and poster sessions.</p>
+      <p class="mt-4 text-gray-600 text-sm">The workshop will be from 9 am to 6 pm PDT and will feature invited talks, contributed spotlights, a panel, and poster sessions.</p>
     </section>
 
     <!-- Footer (optional) -->

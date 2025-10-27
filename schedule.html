@@ -11,106 +11,54 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
     <style>
-      /* Active navigation link styles */
-      .nav-link-active {
-        position: relative;
-        color: #1d4ed8 !important; /* blue-700 */
-      }
-      
+      .nav-link-active { position: relative; color: #1d4ed8 !important; }
       .nav-link-active::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, #1d4ed8, #3b82f6);
-        border-radius: 1px;
-        animation: slideIn 0.3s ease-out;
+        content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px;
+        background: linear-gradient(90deg, #1d4ed8, #3b82f6); border-radius: 1px; animation: slideIn 0.3s ease-out;
       }
-      
-      @keyframes slideIn {
-        from {
-          width: 0%;
-          opacity: 0;
-        }
-        to {
-          width: 100%;
-          opacity: 1;
-        }
-      }
-      
-      /* Mobile nav link styles */
-      .mobile-nav-link {
-        position: relative;
-        transition: all 0.3s ease;
-      }
-      
-      .mobile-nav-link-active {
-        color: #1d4ed8 !important;
-        background: rgba(255, 255, 255, 0.3) !important;
-      }
-      
+      @keyframes slideIn { from { width: 0%; opacity: 0; } to { width: 100%; opacity: 1; } }
+      .mobile-nav-link { position: relative; transition: all 0.3s ease; }
+      .mobile-nav-link-active { color: #1d4ed8 !important; background: rgba(255, 255, 255, 0.3) !important; }
       .mobile-nav-link-active::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 3px;
-        height: 70%;
-        background: linear-gradient(180deg, #1d4ed8, #3b82f6);
-        border-radius: 2px;
-        animation: slideInVertical 0.3s ease-out;
+        content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+        width: 3px; height: 70%; background: linear-gradient(180deg, #1d4ed8, #3b82f6); border-radius: 2px; animation: slideInVertical 0.3s ease-out;
       }
-      
-      @keyframes slideInVertical {
-        from {
-          height: 0%;
-          opacity: 0;
-        }
-        to {
-          height: 70%;
-          opacity: 1;
-        }
-      }
+      @keyframes slideInVertical { from { height: 0%; opacity: 0; } to { height: 70%; opacity: 1; } }
     </style>
 </head>
   <body class="bg-[#F0E4D3] text-gray-800" style="font-family: 'Roboto', sans-serif;">
 
     <nav class="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/30 shadow-lg">
-        <div class="mx-auto flex justify-between md:justify-evenly items-center px-4 py-3 h-16"
-          style="backdrop-filter: blur(8px); background: rgba(255,255,255,0.35);">
-          <!-- Brand -->
-          <a href="index.html" class="text-xl font-bold text-black hover:text-blue-700 drop-shadow-lg" style="font-family: 'Cormorant', serif;">
-            Biosecurity Safeguards for Generative AI
-          </a>
-          <!-- Desktop Links -->
-          <div class="hidden md:flex space-x-4 text-lg font-medium">
-            <a href="index.html" class="nav-link hover:text-blue-700 transition">Home</a>
-            <a href="schedule.html" class="nav-link hover:text-blue-700 transition nav-link-active">Schedule</a>
-            <a href="call_for_papers.html" class="nav-link hover:text-blue-700 transition">Call for Papers</a>
-            <!-- <a href="index.html#SpeakerAndPanelist" class="nav-link hover:text-blue-700 transition">Speakers</a> -->
-          </div>
-          <!-- Hamburger Menu (Mobile) -->
-          <button id="nav-toggle" class="md:hidden focus:outline-none" aria-label="Toggle navigation">
-            <svg class="w-7 h-7 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-          </button>
+      <div class="mx-auto flex justify-between md:justify-evenly items-center px-4 py-3 h-16"
+        style="backdrop-filter: blur(8px); background: rgba(255,255,255,0.35);">
+        <!-- Brand -->
+        <a href="index.html" class="text-xl font-bold text-black hover:text-blue-700 drop-shadow-lg" style="font-family: 'Cormorant', serif;">
+          Biosecurity Safeguards for Generative AI
+        </a>
+        <!-- Desktop Links -->
+        <div class="hidden md:flex space-x-4 text-lg font-medium">
+          <a href="index.html" class="nav-link hover:text-blue-700 transition">Home</a>
+          <a href="schedule.html" class="nav-link hover:text-blue-700 transition nav-link-active">Schedule</a>
+          <a href="call_for_papers.html" class="nav-link hover:text-blue-700 transition">Call for Papers</a>
         </div>
-      
-        <!-- Mobile Links Dropdown -->
-        <div id="nav-menu"
-             class="absolute top-full left-0 w-full md:hidden px-4 py-3 border-t border-white/30 shadow-lg hidden z-20"
-             style="backdrop-filter: blur(8px); background: rgba(255,255,255,0.35);">
-            <a href="index.html" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Home</a>
-            <a href="schedule.html" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link mobile-nav-link-active">Schedule</a>
-            <a href="call_for_papers.html" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Call for Papers</a>
-            <!-- <a href="index.html#SpeakerAndPanelist" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Speakers</a> -->
-        </div>
-      </nav>
+        <!-- Hamburger Menu (Mobile) -->
+        <button id="nav-toggle" class="md:hidden focus:outline-none" aria-label="Toggle navigation">
+          <svg class="w-7 h-7 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Links Dropdown -->
+      <div id="nav-menu"
+           class="absolute top-full left-0 w-full md:hidden px-4 py-3 border-t border-white/30 shadow-lg hidden z-20"
+           style="backdrop-filter: blur(8px); background: rgba(255,255,255,0.35);">
+          <a href="index.html" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Home</a>
+          <a href="schedule.html" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link mobile-nav-link-active">Schedule</a>
+          <a href="call_for_papers.html" class="mobile-nav-link block py-3 px-2 text-black font-medium hover:text-blue-700 hover:bg-white/20 rounded-md transition-all duration-200 nav-link">Call for Papers</a>
+      </div>
+    </nav>
 
     <!-- HEADER -->
     <header class="bg-[url('img/bg.png')] bg-cover bg-center min-h-[340px] text-center text-white flex items-center">
@@ -124,8 +72,10 @@
     <!-- PROGRAM SCHEDULE -->
     <section id="program" class="max-w-5xl mx-auto mt-24 mb-16 px-4">
       <h2 class="text-4xl font-bold mb-4 text-blue-900 text-center" style="font-family: 'Cormorant', serif;">Schedule (Tentative)</h2>
+      <p class="text-center text-sm text-gray-600 mb-4">Single-track • All times <span class="font-semibold">PDT</span>. Invited talks = 25 min + 3–5 min Q&amp;A. Contributed spotlights = 5 min (strict). Panel = 45 min. Posters = 40 min.</p>
+
       <div class="bg-white/60 border border-gray-200 shadow-sm rounded-xl overflow-x-auto">
-        <table class="min-w-full text-sm">
+        <table class="min-w-full text-sm align-top">
           <thead>
             <tr class="bg-gray-100">
               <th class="px-4 py-2 font-semibold text-left" style="font-family: 'Cormorant', serif;">Time (PDT)</th>
@@ -134,36 +84,82 @@
             </tr>
           </thead>
           <tbody class="divide-y">
-            <tr><td class="px-4 py-2">9:00 - 9:05</td><td class="px-4 py-2">Opening remarks</td><td class="px-4 py-2">Organizers</td></tr>
-            <tr><td class="px-4 py-2">9:05 - 9:40</td><td class="px-4 py-2">Invited talk 1</td><td class="px-4 py-2">Yoshua Bengio</td></tr>
-            <tr><td class="px-4 py-2">9:40 - 10:15</td><td class="px-4 py-2">Invited talk 2</td><td class="px-4 py-2">Peter Hendersen</td></tr>
-            <tr><td class="px-4 py-2">10:15 - 10:25</td><td class="px-4 py-2">Short break</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">10:25 - 10:45</td><td class="px-4 py-2">Contributed talk 1</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">10:45 - 11:05</td><td class="px-4 py-2">Contributed talk 2</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">11:05 - 11:55</td><td class="px-4 py-2">Poster session 1</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">11:55 - 12:55</td><td class="px-4 py-2">Lunch break</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">12:55 - 1:30</td><td class="px-4 py-2">Invited talk 3</td><td class="px-4 py-2">Jian Ma</td></tr>
-            <tr><td class="px-4 py-2">1:30 - 2:05</td><td class="px-4 py-2">Invited talk 4</td><td class="px-4 py-2">Russ Altman</td></tr>
-            <tr><td class="px-4 py-2">2:05 - 3:05</td><td class="px-4 py-2">Panel discussion</td><td class="px-4 py-2">Panelists</td></tr>
-            <tr><td class="px-4 py-2">3:05 - 3:15</td><td class="px-4 py-2">Short break</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">3:15 - 4:05</td><td class="px-4 py-2">Poster session 2</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">4:05 - 4:40</td><td class="px-4 py-2">Invited talk 5</td><td class="px-4 py-2">Eric Xing</td></tr>
-            <tr><td class="px-4 py-2">4:40 - 5:15</td><td class="px-4 py-2">Invited talk 6</td><td class="px-4 py-2">Theofanis Karaletsos</td></tr>
-            <tr><td class="px-4 py-2">5:15 - 5:35</td><td class="px-4 py-2">Contributed talk 3</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">5:35 - 5:55</td><td class="px-4 py-2">Contributed talk 4</td><td class="px-4 py-2"></td></tr>
-            <tr><td class="px-4 py-2">5:55 - 6:00</td><td class="px-4 py-2">Closing remarks</td><td class="px-4 py-2">Organizers</td></tr>
+            <tr><td class="px-4 py-2 font-medium">9:00 – 9:05</td><td class="px-4 py-2">Opening remarks</td><td class="px-4 py-2">Organizers</td></tr>
+
+            <tr><td class="px-4 py-2 font-medium">9:05 – 9:35</td><td class="px-4 py-2">Invited talk 1</td><td class="px-4 py-2">Yoshua Bengio (Mila, Université de Montréal)</td></tr>
+            <tr><td class="px-4 py-2 font-medium">9:35 – 10:05</td><td class="px-4 py-2">Invited talk 2</td><td class="px-4 py-2">Peter Henderson (Princeton University)</td></tr>
+            <tr><td class="px-4 py-2 font-medium">10:05 – 10:35</td><td class="px-4 py-2">Invited talk 3</td><td class="px-4 py-2">Sheng Lin-Gibson (NIST)</td></tr>
+
+            <tr class="bg-gray-50"><td class="px-4 py-2 font-medium">10:35 – 10:45</td><td class="px-4 py-2">Short break</td><td class="px-4 py-2">—</td></tr>
+
+            <tr><td class="px-4 py-2 font-medium">10:45 – 11:15</td><td class="px-4 py-2">Invited talk 4</td><td class="px-4 py-2">Megan Blewett (Iris Medicine; Kelonia Therapeutics)</td></tr>
+            <tr><td class="px-4 py-2 font-medium">11:15 – 11:45</td><td class="px-4 py-2">Invited talk 5</td><td class="px-4 py-2">George Church</td></tr>
+
+            <tr>
+              <td class="px-4 py-2 font-medium">11:45 – 12:00</td>
+              <td class="px-4 py-2">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center rounded-md bg-blue-100 text-blue-800 px-2 py-0.5 text-xs font-medium">Contributed Spotlights A</span>
+                  <span class="text-xs text-gray-500">(3 × 5 min)</span>
+                </div>
+                <ul class="mt-2 list-disc pl-5 space-y-1">
+                  <li><span class="font-medium">11:45–11:50</span> <em>ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity</em></li>
+                  <li><span class="font-medium">11:50–11:55</span> <em>Without Safeguards, AI-Biology Integration Risks Accelerating Future Pandemics</em></li>
+                  <li><span class="font-medium">11:55–12:00</span> <em>Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards into Open-Weight LLMs</em></li>
+                </ul>
+              </td>
+              <td class="px-4 py-2">—</td>
+            </tr>
+
+            <tr class="bg-gray-50"><td class="px-4 py-2 font-medium">12:00 – 1:00</td><td class="px-4 py-2">Lunch break</td><td class="px-4 py-2">—</td></tr>
+
+            <tr><td class="px-4 py-2 font-medium">1:00 – 1:40</td><td class="px-4 py-2">Poster session 1</td><td class="px-4 py-2">—</td></tr>
+            <tr><td class="px-4 py-2 font-medium">1:40 – 2:10</td><td class="px-4 py-2">Invited talk 6</td><td class="px-4 py-2">Jian Ma (Carnegie Mellon University)</td></tr>
+            <tr><td class="px-4 py-2 font-medium">2:10 – 2:40</td><td class="px-4 py-2">Invited talk 7</td><td class="px-4 py-2">Russ Altman (Stanford University)</td></tr>
+
+            <tr class="bg-amber-50">
+              <td class="px-4 py-2 font-medium">2:40 – 3:25</td>
+              <td class="px-4 py-2">Panel discussion (45 min)</td>
+              <td class="px-4 py-2">Panelists</td>
+            </tr>
+
+            <tr class="bg-gray-50"><td class="px-4 py-2 font-medium">3:25 – 3:35</td><td class="px-4 py-2">Short break</td><td class="px-4 py-2">—</td></tr>
+
+            <tr><td class="px-4 py-2 font-medium">3:35 – 4:05</td><td class="px-4 py-2">Invited talk 8</td><td class="px-4 py-2">Eric Xing (Carnegie Mellon University; MBZUAI; Petuum Inc.)</td></tr>
+            <tr><td class="px-4 py-2 font-medium">4:05 – 4:35</td><td class="px-4 py-2">Invited talk 9</td><td class="px-4 py-2">Theofanis Karaletsos (Chan Zuckerberg Initiative)</td></tr>
+
+            <tr>
+              <td class="px-4 py-2 font-medium">4:35 – 4:50</td>
+              <td class="px-4 py-2">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center rounded-md bg-blue-100 text-blue-800 px-2 py-0.5 text-xs font-medium">Contributed Spotlights B</span>
+                  <span class="text-xs text-gray-500">(3 × 5 min)</span>
+                </div>
+                <ul class="mt-2 list-disc pl-5 space-y-1">
+                  <li><span class="font-medium">4:35–4:40</span> <em>GeneBreaker: Jailbreak Attacks against DNA Language Models with Pathogenicity Guidance</em></li>
+                  <li><span class="font-medium">4:40–4:45</span> <em>Resisting RL Elicitation of Biosecurity Capabilities: Reasoning Models Exploration Hacking on WMDP</em></li>
+                  <li><span class="font-medium">4:45–4:50</span> <em>SafeGenie: Erasing Dangerous Concepts from Biological Diffusion Models</em></li>
+                </ul>
+              </td>
+              <td class="px-4 py-2">—</td>
+            </tr>
+
+            <tr><td class="px-4 py-2 font-medium">4:50 – 5:30</td><td class="px-4 py-2">Poster session 2</td><td class="px-4 py-2">—</td></tr>
+            <tr><td class="px-4 py-2 font-medium">5:30 – 5:35</td><td class="px-4 py-2">Closing remarks</td><td class="px-4 py-2">Organizers</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="mt-4 text-gray-600 text-sm">The workshop will be from 9 am to 6 pm PDT and will feature invited talks, contributed talks, a panel, and poster sessions.</p>
+
+      <p class="mt-4 text-gray-600 text-sm">
+        The workshop runs roughly 9:00–5:35&nbsp;pm PDT with invited talks, two contributed spotlight blocks, a panel, and two poster sessions.
+      </p>
     </section>
 
-    <!-- Footer (optional) -->
+    <!-- Footer -->
     <footer class="text-center py-10 text-xs text-gray-400 bg-white/60">
       &copy; 2025 NeurIPS Workshop – Biosecurity Safeguards for Generative AI
     </footer>
 
     <script src="script.js"></script>
-        
   </body>
 </html>
